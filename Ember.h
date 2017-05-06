@@ -14,6 +14,7 @@ protected:
     std::string telefon;
 
 public:
+    Ember() {};
     Ember(std::string nev, std::string cim, std::string telefon);
 
     std::string & getNev();

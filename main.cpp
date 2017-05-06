@@ -7,14 +7,15 @@ Dijcsomag * dijcsomagBeolvas(int & n);
 Ugyfel * ugyfelBeolvas(int & n);
 
 int main() {
-    int n;
+    int n_csomagok, n_ugyfelek;
 
-    Dijcsomag * csomagok = dijcsomagBeolvas(n);
+    Dijcsomag * csomagok = dijcsomagBeolvas(n_csomagok);
+    Ugyfel * ugyfelek = ugyfelBeolvas(n_ugyfelek);
 
     return 0;
 }
 
-Dijcsomag * dijcasomagBeolvas(int & n) {
+Dijcsomag * dijcsomagBeolvas(int & n) {
     std::string buffer;
 
     std::ifstream is("csomagok.txt");
@@ -30,6 +31,24 @@ Dijcsomag * dijcasomagBeolvas(int & n) {
     }
 
     return csomagok;
+}
+
+Ugyfel * ugyfelBeolvas(int & n) {
+    std::string buffer ;
+
+    std::ifstream is("ugyfelek.txt");
+
+    is >> buffer;
+
+    n = std::stoi(buffer.c_str());
+
+    Ugyfel * ugyfelek = new Ugyfel[n];
+
+    for(int i = 0; i < n; i++) {
+        ugyfelek[i].beolvas(is);
+    }
+
+    return ugyfelek;
 }
 
 /*

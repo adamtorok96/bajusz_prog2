@@ -15,6 +15,7 @@ class Ugyfel : public Ember {
     int osszeg;
 
 public:
+    Ugyfel() : percek(0), sms(0), osszeg(0) {};
     Ugyfel(std::string nev, std::string cim, std::string telefon);
 
     void beolvas(std::istream & is);
