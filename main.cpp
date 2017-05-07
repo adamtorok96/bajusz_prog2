@@ -12,13 +12,33 @@ int main() {
     Dijcsomag * csomagok = dijcsomagBeolvas(n_csomagok);
     Ugyfel * ugyfelek = ugyfelBeolvas(n_ugyfelek);
 
+    std::ofstream os("csomagok2.txt");
+
+    os << n_csomagok << std::endl;
+
+    for(int i = 0; i < n_csomagok; i++) {
+        csomagok[i].kiir(os);
+    }
+
+    os.close();
+
+    os.open("ugyfelek2.txt");
+
+    os << n_ugyfelek << std::endl;
+
+    for(int i = 0; i < n_ugyfelek; i++) {
+        ugyfelek[i].kiir(os);
+    }
+
+    os.close();
+
     return 0;
 }
 
 Dijcsomag * dijcsomagBeolvas(int & n) {
     std::string buffer;
 
-    std::ifstream is("csomagok.txt");
+    std::ifstream is("csomagok2.txt");
 
     is >> buffer;
 
@@ -38,7 +58,7 @@ Dijcsomag * dijcsomagBeolvas(int & n) {
 Ugyfel * ugyfelBeolvas(int & n) {
     std::string buffer ;
 
-    std::ifstream is("ugyfelek.txt");
+    std::ifstream is("ugyfelek2.txt");
 
     is >> buffer;
     is.get();

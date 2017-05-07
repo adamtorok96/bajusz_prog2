@@ -36,3 +36,9 @@ int Dijcsomag::getPerc() {
 int Dijcsomag::getSms() {
     return sms;
 }
+
+void Dijcsomag::kiir(std::ostream &os) {
+    os << nev << std::endl;
+    os << perc << std::endl;
+    os << sms << std::endl;
+}

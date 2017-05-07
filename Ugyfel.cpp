@@ -40,3 +40,13 @@ void Ugyfel::beolvas(std::istream &is) {
     is >> buffer;
     osszeg = std::stoi(buffer.c_str());
 }
+
+void Ugyfel::kiir(std::ostream &os) {
+    os << nev << std::endl;
+    os << cim << std::endl;
+    os << telefon << std::endl;
+
+    os << percek << std::endl;
+    os << sms << std::endl;
+    os << osszeg << std::endl;
+}

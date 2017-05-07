@@ -19,6 +19,7 @@ public:
     Dijcsomag(std::string nev, int perc, int sms);
 
     void beolvas(std::istream & is);
+    void kiir(std::ostream & os);
 
     std::string & getNev();
     int getPerc();

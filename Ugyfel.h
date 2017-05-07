@@ -19,6 +19,7 @@ public:
     Ugyfel(std::string nev, std::string cim, std::string telefon);
 
     void beolvas(std::istream & is);
+    void kiir(std::ostream & os);
 
     int getPercek();
     int getSms();
