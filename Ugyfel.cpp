@@ -3,6 +3,7 @@
 //
 
 #include <iostream>
+#include <iomanip>
 #include "Ugyfel.h"
 
 Ugyfel::Ugyfel(std::string nev, std::string cim, std::string telefon) : Ember(nev, cim, telefon) {
@@ -26,13 +27,9 @@ int Ugyfel::getOsszeg() {
 void Ugyfel::beolvas(std::istream &is) {
     std::string buffer;
 
-    getline(is, nev);
-    getline(is, cim);
-    getline(is, telefon);
-
-    std::cout << nev << '\n';
-    std::cout << cim << '\n';
-    std::cout << telefon << '\n';
+    is >> nev;
+    is >> cim;
+    is >> telefon;
 
     is >> buffer;
     percek = std::stoi(buffer.c_str());

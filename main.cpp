@@ -30,6 +30,8 @@ Dijcsomag * dijcsomagBeolvas(int & n) {
         csomagok[i].beolvas(is);
     }
 
+    is.close();
+
     return csomagok;
 }
 
@@ -39,6 +41,7 @@ Ugyfel * ugyfelBeolvas(int & n) {
     std::ifstream is("ugyfelek.txt");
 
     is >> buffer;
+    is.get();
 
     n = std::stoi(buffer.c_str());
 
@@ -47,6 +50,8 @@ Ugyfel * ugyfelBeolvas(int & n) {
     for(int i = 0; i < n; i++) {
         ugyfelek[i].beolvas(is);
     }
+
+    is.close();
 
     return ugyfelek;
 }
